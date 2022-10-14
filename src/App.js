@@ -1,5 +1,5 @@
 import siteLogo from "./logo.svg";
-import "./App.css";
+import "./App.scss";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import Course from "./components/Course";
@@ -21,11 +21,12 @@ function App() {
             <Header />
             <div
                 className="App"
-                style={{backgroundColor: "#f00", color: "#00F"}}
+                style={{backgroundColor: "#EEE", color: "#00F"}}
             >
                 <h1>Hello React</h1>
+                <div className="appChild">{myName.toUpperCase()}</div>
             </div>
-            <div>{myName.toUpperCase()}</div>
+            
 
             {/* {console.log("OK")} */}
 

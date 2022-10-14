@@ -1,0 +1,14 @@
+@import "./sass/global";
+body {
+    height: 2000px;
+
+    .course {
+        font-weight: bold;
+    }
+}
+
+.App {
+    .appChild {
+        font-weight: bold
+    }
+}
