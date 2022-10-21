@@ -1,9 +1,22 @@
-import React from "react";
+import React, {Component} from "react";
 
-class Header extends React.Component{
-    render()
-    {
-        return(<div>This is header</div>)
+function display() {
+    console.log("Works");
+}
+class Header extends Component {
+    state = {
+        name: "Mohamed",
+    };
+
+    myCourse = "React";
+    render() {
+        return (
+            <div>
+                <div>{this.myCourse}</div>
+                <div>{this.state.name}</div>
+                <button onClick={display}>Click me</button>
+            </div>
+        );
     }
 }
 

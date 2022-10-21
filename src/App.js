@@ -1,9 +1,11 @@
 import siteLogo from "./logo.svg";
-import "./App.scss";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import Course from "./components/Course";
 import View from "./components/viewCourses";
+import Grad from "./components/Grad";
+import "./App.scss";
+import StateReview from "./components/StateReview";
 
 
 var counter = 0;
@@ -18,7 +20,6 @@ function App() {
     return (
         <>
             <Navbar />
-            <Header />
             <div
                 className="App"
                 style={{backgroundColor: "#EEE", color: "#00F"}}
@@ -28,7 +29,6 @@ function App() {
             </div>
             
 
-            {/* {console.log("OK")} */}
 
             {counter}
 
@@ -46,7 +46,27 @@ function App() {
             <Course courseName="React" courseDescription="JS Library"/>
             <hr />
             <View />
+
+            <hr />
+
+            <Header />
+            <Navbar />
+            <hr />
+            <Grad />
+
+            <StateReview />
+
         </>
     );
 }
 export default App;
+
+
+/*
+1- Practice JS
+2- Flex & responsive 
+3- Global functions & scoped function ( let & var & const )
+4- API
+
+
+*/

@@ -5,23 +5,24 @@ import Accordion from "react-bootstrap/Accordion";
 import {Card} from "react-bootstrap";
 const View = () => {
     var courses = ["HTML", "CSS", "JS", "SASS", "JSON", "Ajax", "React"];
+
+    const courseDisplay = courses.map((course, index) => (
+                            // <li className="course" key={index}>
+                            //     {course}
+                            // </li>
+                            <Col md={6} key={index}>
+                                <Card className="m-4" style={{width: "18rem"}}>
+                                    <Card.Body>
+                                        <Card.Title>{course}</Card.Title>
+                                    </Card.Body>
+                                </Card>
+                            </Col>
+                        ));
     return (
         <>
             <Container>
                 <Row>
-                    {courses.map((course, index) => (
-                        // <li className="course" key={index}>
-                        //     {course}
-                        // </li>
-                        <Col md={6} key={index}>
-                            <Card className="m-4" style={{width: "18rem"}}>
-                                <Card.Body>
-                                    <Card.Title>{course}</Card.Title>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-                    ))}
-
+                    {courseDisplay}
                     <Accordion defaultActiveKey="0">
                         <Accordion.Item eventKey="0">
                             <Accordion.Header>
