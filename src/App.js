@@ -1,72 +1,52 @@
-import siteLogo from "./logo.svg";
-import Navbar from "./components/Navbar";
-import Header from "./components/Header";
-import Course from "./components/Course";
-import View from "./components/viewCourses";
-import Grad from "./components/Grad";
+import {useState} from "react";
+import { Button } from "react-bootstrap";
 import "./App.scss";
-import StateReview from "./components/StateReview";
+import {CompareClass, CompareFunction} from "./components/compare";
+import Controlled from "./components/controlled";
+import {CounterClass, CounterFunction} from "./components/counter";
+import WelcomeDialog from "./components/dialig";
+import Reservation from "./components/multiple";
+import Rendering from "./components/rendering";
+import ShowHidePassword from "./components/showHidePassword";
 
-
-var counter = 0;
-function check() {
-    counter++;
-    console.log(counter);
-}
 function App() {
-    var myName = "Mohamed";
-    const graduate = false;
-
+    const [visible, setVisible] = useState(true);
     return (
         <>
-            <Navbar />
-            <div
-                className="App"
-                style={{backgroundColor: "#EEE", color: "#00F"}}
-            >
-                <h1>Hello React</h1>
-                <div className="appChild">{myName.toUpperCase()}</div>
-            </div>
-            
-
-
-            {counter}
-
-            <button onClick={check}>Click me</button>
+            <ShowHidePassword courseName="React in class" />
+            <hr />
+            <Rendering courseName="React in function" />
 
             <hr />
-            {graduate ? <div>Hello Graduate</div> : <div>Hello student</div>}
+            <CounterFunction />
             <hr />
-
-            <img src={siteLogo} alt="Test logo" width="200" height="200" />
-
-            <hr /><br />
-            <Course courseName="CSS" courseDescription="Style"/>
-            <Course courseName="javaScript" courseDescription="Programming language"/>
-            <Course courseName="React" courseDescription="JS Library"/>
+            <CounterClass />
             <hr />
-            <View />
+            <Controlled />
 
             <hr />
+            <Reservation />
 
-            <Header />
-            <Navbar />
             <hr />
-            <Grad />
+            <WelcomeDialog />
 
-            <StateReview />
-
+            <Button variant="primary" onClick={() => setVisible(!visible)}>{visible ? "Hide" : "Show"}</Button>
+            {visible && (
+                <>
+                    <CompareFunction />
+                    <hr />
+                    <CompareClass />
+                </>
+            )}
         </>
     );
 }
 export default App;
-
 
 /*
 1- Practice JS
 2- Flex & responsive 
 3- Global functions & scoped function ( let & var & const )
 4- API
-
 
 */

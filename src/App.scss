@@ -1,4 +1,5 @@
 @import "./sass/global";
+
 body {
     height: 5000px;
 
@@ -11,4 +12,24 @@ body {
     .appChild {
         font-weight: bold
     }
+}
+
+.overZero {
+    color: #00F
+}
+
+.underZero {
+    color: #F00
+}
+
+.controlled input:not([type="checkbox"], [type="radio"]),
+.controlled select,
+.controlled textarea {
+    display: block;
+    margin: 20px;
+}
+input[type="checkbox"], 
+input[type="radio"]
+{
+    margin: 10px;
 }
